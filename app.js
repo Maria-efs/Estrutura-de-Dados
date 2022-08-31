@@ -25,21 +25,25 @@ const somentePares = (number) => number%2 == 0
 const pares = numbers.filter(somentePares)
 
 //3 - Total dos valores com desconto de R$4
-const desconto4 = (number) => number - (number + 4)
-const numbersDesconto4 = numbers.map (desconto4)
+const desconto4 = (number) => number - 4
+const numbersDesconto4 = numbers.map(desconto4).reduce(soma)
 
 //4 - Array com todos os elementos ímpares somando 21
-
+const somar21 = (number) => number + 21
+const somenteImpares = (number) => number%2 != 0
+const impares = numbers.filter(somenteImpares).map(somar21)
 
 showArray (numbers, 'main', 'Array') //dentro dos () esta os parmetros da function
 showArray (numbers, 'main', 'Array') //adicionando outro show array
-showArray(numbersDesconto, 'main', 'Descontos de R$4') //exibindo o array modificado pelo map
+showArray(numbersDesconto, 'main', 'Descontos de R$2') //exibindo o array modificado pelo map
 showArray (valoresMenores20, 'main', 'Valores menores que 20') //exibindo o array modificado pelo filter
 showArray([valorTotal], 'main', 'Valor total') //exibindo o valor com a soma de todos os numbers
 showArray(numberSoma100, 'main', 'Números + 100') //exibindo o valor somando 100
 showArray(pares, 'main', 'Números pares') //exibindo somente pares
-showArray(numbersDesconto4, 'main', 'Desconto de R$4')
- 
+showArray([numbersDesconto4], 'main', 'Desconto de R$4') //exibindo um desconto de R$4
+showArray(impares, 'main', 'Impares + 21') //exibindo os impares somando 21
+
+
 /************************************************************
  *                      MAP
  *                  (mapeando)
